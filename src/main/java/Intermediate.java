@@ -2,22 +2,39 @@ import java.util.Date;
 import java.util.List;
 
 public class Intermediate {
+    private int id;
+    private int airportID;
     private Airport airport;
     private Date arrivalTime;
     private Date departureTime;
-    private List<String> nearbyHotels;
-    private int parkingLot;
 
-    public Intermediate(Airport airport, Date arrivalTime, Date departureTime, List<String> nearbyHotels, int parkingLot) {
+    public Intermediate(int airportID, int id, Airport airport, Date arrivalTime, Date departureTime) {
         this.airport = airport;
         this.arrivalTime = arrivalTime;
         this.departureTime = departureTime;
-        this.nearbyHotels = nearbyHotels;
-        this.parkingLot = parkingLot;
+        this.id = id;
+        this.airportID = airportID;
+
     }
 
     public Intermediate() {
 
+    }
+
+    public int getAirportID() {
+        return airportID;
+    }
+
+    public void setAirportID(int airportID) {
+        this.airportID = airportID;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Airport getAirport() {
@@ -44,19 +61,5 @@ public class Intermediate {
         this.departureTime = departureTime;
     }
 
-    public List<String> getNearbyHotels() {
-        return nearbyHotels;
-    }
 
-    public void setNearbyHotels(List<String> nearbyHotels) {
-        this.nearbyHotels = nearbyHotels;
-    }
-
-    public int getParkingLot() {
-        return parkingLot;
-    }
-
-    public void setParkingLot(int parkingLot) {
-        this.parkingLot = parkingLot;
-    }
 }

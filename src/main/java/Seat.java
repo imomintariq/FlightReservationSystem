@@ -1,11 +1,11 @@
 public class Seat {
-    private int seatId;
+    private String seatId;
     private boolean seatOccupied;
     private String passportNumber;
     private String classType;
     private int luggageInPounds;
 
-    public Seat(int seatId, boolean seatOccupied, String passportNumber, String classType, int luggageInPounds) {
+    public Seat(String seatId, boolean seatOccupied, String passportNumber, String classType, int luggageInPounds) {
         this.seatId = seatId;
         this.seatOccupied = seatOccupied;
         this.passportNumber = passportNumber;
@@ -13,11 +13,11 @@ public class Seat {
         this.luggageInPounds = luggageInPounds;
     }
 
-    public int getSeatId() {
+    public String getSeatId() {
         return seatId;
     }
 
-    public void setSeatId(int seatId) {
+    public void setSeatId(String seatId) {
         this.seatId = seatId;
     }
 
@@ -52,4 +52,5 @@ public class Seat {
     public void setLuggageInPounds(int luggageInPounds) {
         this.luggageInPounds = luggageInPounds;
     }
+
 }

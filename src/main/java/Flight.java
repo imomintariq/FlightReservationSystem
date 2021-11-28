@@ -3,12 +3,24 @@ public class Flight {
     private String flightName;
     private Airplane airplane;
     private Route route;
+    private int routeID;
     private boolean isDeparted;
     private boolean hasLanded;
 
 
+
     public Flight() {
         route = new Route();
+    }
+
+    public Flight(String flightId, int routeID, String flightName, Airplane airplane, Route route, boolean isDeparted, boolean hasLanded) {
+        this.flightId = flightId;
+        this.flightName = flightName;
+        this.airplane = airplane;
+        this.route = route;
+        this.isDeparted = isDeparted;
+        this.hasLanded = hasLanded;
+        this.routeID = routeID;
     }
 
     public Flight(String flightId, String flightName, Airplane airplane, Route route) {
@@ -16,6 +28,14 @@ public class Flight {
         this.flightName = flightName;
         this.airplane = airplane;
         this.route = route;
+    }
+
+    public int getRouteID() {
+        return routeID;
+    }
+
+    public void setRouteID(int routeID) {
+        this.routeID = routeID;
     }
 
     public String getFlightId() {

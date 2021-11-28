@@ -2,20 +2,28 @@ import java.util.Date;
 import java.util.List;
 
 public class Destination {
+    private int airportID;
     private Airport airport;
     private Date arrivalTime;
-    private List<String> nearbyHotels;
-    private int parkingLot;
 
-    public Destination(Airport airport, Date arrivalTime, List<String> nearbyHotels, int parkingLot) {
+
+
+    public Destination(int airportID, Airport airport, Date arrivalTime) {
+        this.airportID = airportID;
         this.airport = airport;
         this.arrivalTime = arrivalTime;
-        this.nearbyHotels = nearbyHotels;
-        this.parkingLot = parkingLot;
     }
 
     public Destination() {
 
+    }
+
+    public int getAirportID() {
+        return airportID;
+    }
+
+    public void setAirportID(int airportID) {
+        this.airportID = airportID;
     }
 
     public Airport getAirport() {
@@ -32,21 +40,5 @@ public class Destination {
 
     public void setArrivalTime(Date arrivalTime) {
         this.arrivalTime = arrivalTime;
-    }
-
-    public List<String> getNearbyHotels() {
-        return nearbyHotels;
-    }
-
-    public void setNearbyHotels(List<String> nearbyHotels) {
-        this.nearbyHotels = nearbyHotels;
-    }
-
-    public int getParkingLot() {
-        return parkingLot;
-    }
-
-    public void setParkingLot(int parkingLot) {
-        this.parkingLot = parkingLot;
     }
 }

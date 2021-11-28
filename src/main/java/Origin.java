@@ -3,17 +3,25 @@ import java.util.Date;
 
 public class Origin {
     private Airport airport;
+    private int airportID;
     private Date departureTime;
-    private int parkingLot;
 
-    public Origin(Airport airport, Date arrivalTime, int parkingLot) {
+    public Origin(int airportID, Airport airport, Date arrivalTime) {
+        this.airportID = airportID;
         this.airport = airport;
         this.departureTime = arrivalTime;
-        this.parkingLot = parkingLot;
+
     }
 
     public Origin() {
+    }
 
+    public int getAirportID() {
+        return airportID;
+    }
+
+    public void setAirportID(int airportID) {
+        this.airportID = airportID;
     }
 
     public Airport getAirport() {
@@ -30,13 +38,5 @@ public class Origin {
 
     public void setDepartureTime(Date arrivalTime) {
         this.departureTime = arrivalTime;
-    }
-
-    public int getParkingLot() {
-        return parkingLot;
-    }
-
-    public void setParkingLot(int parkingLot) {
-        this.parkingLot = parkingLot;
     }
 }

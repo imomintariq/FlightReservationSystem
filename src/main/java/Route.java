@@ -2,16 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Route {
+    private int routeId;
     private Origin origin;
     private List<Intermediate> intermediate;
+    private int intermediateId;
     private Destination destination;
     private boolean isDirect;
 
-    public Route(Origin origin, List<Intermediate> intermediate, Destination destination, boolean isDirect) {
+    public Route(int routeId, Origin origin, int intermediateId,List<Intermediate> intermediate, Destination destination, boolean isDirect) {
         this.origin = origin;
         this.intermediate = intermediate;
         this.destination = destination;
         this.isDirect = isDirect;
+        this.intermediateId = intermediateId;
+        this.routeId = routeId;
+
     }
 
     public Route() {
@@ -19,6 +24,22 @@ public class Route {
         intermediate = new ArrayList<>();
         destination = new Destination();
 
+    }
+
+    public int getRouteId() {
+        return routeId;
+    }
+
+    public void setRouteId(int routeId) {
+        this.routeId = routeId;
+    }
+
+    public int getIntermediateId() {
+        return intermediateId;
+    }
+
+    public void setIntermediateId(int intermediateId) {
+        this.intermediateId = intermediateId;
     }
 
     public Origin getOrigin() {
@@ -46,6 +67,13 @@ public class Route {
     }
 
     public boolean isDirect() {
+        if(intermediate.size() == 0){
+            isDirect = true;
+
+        }
+        else{
+            isDirect = false;
+        }
         return isDirect;
     }
 
@@ -59,7 +87,7 @@ public class Route {
     public void displayRoute(){
         System.out.println("ORIGIN:  Airport: "+origin.getAirport().getName() + ", Departure Time: " +origin.getDepartureTime() );
         System.out.println("DESTINATION:  Airport: "+destination.getAirport().getName() + ", Arrival Time: " +destination.getArrivalTime() );
-        if(isDirect == false){
+        if(isDirect() == false){
             System.out.println("INTERMEDIATE AIRPORTS");
             for(int i = 0 ; i < intermediate.size(); i++){
                 System.out.println("Airport: "+ intermediate.get(i).getAirport().getName() + ", Arrival Time: " +intermediate.get(i).getArrivalTime() );

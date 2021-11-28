@@ -2,18 +2,20 @@ import java.util.List;
 
 public class Airplane {
     private String type;
-    private String planeId;
+    private int planeId;
     private boolean isAvailable;
     private int seatCapacity;
     private List<Seat> seatsInfo;
 
 
-    public Airplane(String type, String planeId, boolean isAvailable, int seatCapacity, List<Seat> seatsInfo) {
+    public Airplane(String type, int planeId, boolean isAvailable) {
         this.type = type;
         this.planeId = planeId;
         this.isAvailable = isAvailable;
-        this.seatCapacity = seatCapacity;
-        this.seatsInfo = seatsInfo;
+    }
+
+    public Airplane() {
+
     }
 
 
@@ -33,11 +35,11 @@ public class Airplane {
         this.type = type;
     }
 
-    public String getPlaneId() {
+    public int getPlaneId() {
         return planeId;
     }
 
-    public void setPlaneId(String planeId) {
+    public void setPlaneId(int planeId) {
         this.planeId = planeId;
     }
 

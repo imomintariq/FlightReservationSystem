@@ -5,16 +5,31 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
+    private String passportNumber;
     private String gender;
     private Date dateOfBirth;
     private String address;
     private String email;
     private String phoneNumber;
+    private Boolean isAdmin;
 
-
-    public User(String username, String password, String firstName, String lastName, String gender, Date dateOfBirth, String address, String email, String phoneNumber) {
+    public User(String username, String password, String passportNumber,String firstName, String lastName, String gender, String address, String email, String phoneNumber, Boolean isAdmin) {
         this.username = username;
         this.password = password;
+        this.passportNumber = passportNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.address = address;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.isAdmin = isAdmin;
+    }
+
+    public User(String username, String password, String passportNumber,String firstName, String lastName, String gender, Date dateOfBirth, String address, String email, String phoneNumber, Boolean isAdmin) {
+        this.username = username;
+        this.password = password;
+        this.passportNumber = passportNumber;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -22,6 +37,23 @@ public class User {
         this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.isAdmin = isAdmin;
+    }
+
+    public String getPassportNumber() {
+        return passportNumber;
+    }
+
+    public void setPassportNumber(String passportNumber) {
+        this.passportNumber = passportNumber;
+    }
+
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
     }
 
     public String getFirstName() {
